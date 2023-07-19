@@ -1,0 +1,39 @@
+<h1>To_App</h1>
+<input type="text" #d1  placeholder="Enter Notes">
+<br>
+<button  class="btn btn-warning" type="submit" (click)="addUser(d1)">Add Notes</button>
+<br>
+<div class="row">
+    <div class="col-md-10">
+      <table>
+          <thead class="thead-dark">
+      <tr>
+          <th>Sr.No</th>
+          <th>User_name</th>
+          <th>Delete User</th>
+      </tr>
+  </thead>
+  <tbody style="border: 5px;">
+    <tr *ngFor="let user of users index as userno">
+        <td>{{userno + 1}}</td>
+        <td>{{user}}</td> 
+        <td>
+            <button  class="btn btn-success"(click)="onDelete(userno)">Remove</button>
+        </td>
+    </tr>
+  </tbody>
+      </table>
+    </div>
+  </div>
+  <select (change)="getValue($event)">
+    <option value="Laptop">Laptop</option>
+    <option value="Mobile">mobile</option>
+    <option value="Watch">Watch</option>
+    <option value="Coller">Coller</option>
+  </select>
+  <div [ngSwitch]="selectProduct">
+    <h2 *ngSwitchCase="'Laptop'" >Laptop</h2>
+    <h2 *ngSwitchCase="'Mobile'">Mobile</h2>
+    <h2 *ngSwitchCase="'Watch'">Watch</h2>
+    <h2 *ngSwitchCase="'Coller'">Coller</h2>
+    </div>

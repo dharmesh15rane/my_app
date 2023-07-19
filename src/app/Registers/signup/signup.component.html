@@ -1,0 +1,18 @@
+<h2>Data binding</h2>
+<h3>Your name is {{name}} and Your Id is {{empId}}</h3>
+<h3>{{ getIdFromName()}}</h3>
+
+<button [disabled]=" getUserEnable()" (click)="userCreated()" class="btn btn-primary">Add User</button> 
+<h4>{{newUserCreated}}</h4>
+
+<!-- <input type="text" class="form-control" (input)="getCompanyName($event)">
+<h4>{{CompanyName}}</h4> -->
+
+
+<input type="text"  class="form-control" [(ngModel)]="TechName">
+<h4>{{TechName}}</h4>
+
+<button (click)="getOfficeName('dhar')" class="btn btn-primary">Show</button> 
+
+<h1 *ngIf="isValid">This is angular structural directives process</h1>
+<button (click)="structDirectives()" class="btn btn-info">Info</button> 
